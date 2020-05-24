@@ -9,6 +9,7 @@ import { mockAsyncImage } from 'app/components/Image/__mocks__'
 window.MutationObserver = MutationObserver
 
 beforeEach(() => {
+  // Async image can easily break tests since the image never loads
   mockAsyncImage()
 })
 

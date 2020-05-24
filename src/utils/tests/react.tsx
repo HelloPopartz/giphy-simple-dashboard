@@ -17,6 +17,8 @@ type RenderOptions<State> = {
   history?: MemoryHistory<any>
 }
 
+// Inject minimal set of libraries to render without problems any component
+
 export function render<State = RootState>(
   ui: React.ReactElement,
   {

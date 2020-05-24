@@ -7,6 +7,7 @@ import Color from 'color'
 import { UnStyledButton } from './UnStyledButton.component'
 
 export type IconButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
+
 export function IconButton({ className, ...otherProps }: IconButtonProps) {
   const classes = useStyles()
   return <UnStyledButton className={clsx(className, classes.iconButton)} {...otherProps} />

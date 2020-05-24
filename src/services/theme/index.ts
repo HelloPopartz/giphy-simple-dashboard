@@ -3,6 +3,8 @@ import { WithTypographyUtils, FontStyleOptions, createTypography } from './typog
 import { WithPalette, PaletteOptions, createPalette } from './palette'
 import { BreakpointOptions, createBreakpoints, WithBreakpointUtils } from './breakpoints'
 
+// Design system inspired in @material-ui
+
 export type AppTheme = WithSpacingUtils & WithTypographyUtils & WithPalette & WithBreakpointUtils
 
 export type WithAppTheme = {

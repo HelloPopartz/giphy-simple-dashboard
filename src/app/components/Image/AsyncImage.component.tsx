@@ -9,6 +9,9 @@ import { isInternetExplorer } from 'utils/browser'
 
 import { Spinner } from '../Loading'
 
+// React-image documentation -> https://github.com/mbrevda/react-image#readme
+// Using legacy component to give support to Edge
+
 export type AsyncImageProps = Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'src'> & {
   src: string | string[]
   spinnerColor?: string
