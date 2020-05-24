@@ -24,18 +24,27 @@ export enum GiphyDataRating {
   R = 'R',
 }
 
-export type GiphyDataStill = {
-  url: string
+export type WithDimensions = {
   width: string
   height: string
 }
 
+export type GiphyDataStill = {
+  url: string
+} & WithDimensions
+
 export type GiphyDataLivePreview = {
-  width: string
-  height: string
   url: string
   size: string
-}
+} & WithDimensions
+
+export type GiphyDataOriginalVideo = {
+  frames: string
+  size: string
+  url: string
+  webp: string
+  mp4: string
+} & WithDimensions
 
 export type WithGiphyImageData = {
   images: {
@@ -43,6 +52,7 @@ export type WithGiphyImageData = {
     ['preview_webp']: GiphyDataLivePreview
     ['preview']: GiphyDataLivePreview
     ['480w_still']: GiphyDataStill
+    original: GiphyDataOriginalVideo
   }
 }
 
