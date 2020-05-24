@@ -19,6 +19,8 @@ export class GiphyDataBuilder extends Builder<GiphyData> {
       ['preview_webp']: new GiphyImageData().getInstance(),
       ['preview']: new GiphyImageData().getInstance(),
       ['480w_still']: new GiphyImageData().getInstance(),
+      ['original_still']: new GiphyImageData().getInstance(),
+      ['original_mp4']: new GiphyImageData().getInstance(),
       original: new GiphyImageData().getInstance(),
     },
   }

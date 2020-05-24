@@ -4,7 +4,7 @@ import { GiphyDataBuilder } from 'app/entities/giphy/__mocks__'
 import { render } from 'utils/tests'
 import { noop } from 'lodash'
 
-import { getGiphyPreview } from 'app/entities/giphy'
+import { getGiphyImageUrl } from 'app/entities/giphy'
 
 import { GalleryImageDetails } from '../GalleryImageDetails.component'
 
@@ -13,12 +13,12 @@ describe('#GridImageDetails.components', () => {
   const dataTestid = 'gallery-details'
 
   it('renders the image in max quality', async () => {
-    const imageInMaxQuality = getGiphyPreview(imageDetails)
+    const imageInMaxQuality = getGiphyImageUrl(imageDetails)
     const galleryImageDetails = render(
       <GalleryImageDetails data={imageDetails} onClose={noop} data-testid={dataTestid} />
     )
     const image = galleryImageDetails.getByRole('img')
-    expect(image).toHaveAttribute('src', imageInMaxQuality.webp)
+    expect(image).toHaveAttribute('src', imageInMaxQuality[0])
   })
 
   it('displays additional information of the image', async () => {

@@ -49,10 +49,12 @@ export type GiphyDataOriginalVideo = {
 export type WithGiphyImageData = {
   images: {
     // There are a bunch more of elements here, but for our demo we just need this
-    ['preview_webp']: GiphyDataLivePreview
-    ['preview']: GiphyDataLivePreview
-    ['480w_still']: GiphyDataStill
+    preview_webp: GiphyDataLivePreview
+    preview: GiphyDataLivePreview
+    '480w_still': GiphyDataStill
+    original_still: GiphyDataStill
     original: GiphyDataOriginalVideo
+    original_mp4: GiphyDataOriginalVideo
   }
 }
 

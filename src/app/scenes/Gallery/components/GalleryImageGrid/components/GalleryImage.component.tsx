@@ -1,5 +1,5 @@
 import { AsyncImage } from 'app/components'
-import { GiphyData, GiphyDataLivePreview, getGiphyLivePreview } from 'app/entities/giphy'
+import { GiphyData, GiphyDataLivePreview, getGiphyProportions, getGiphyLivePreviewUrl } from 'app/entities/giphy'
 import React, { useRef, useLayoutEffect, useCallback } from 'react'
 import { ExtendableStyles, Testable } from 'utils/react'
 import { makeStyles, AppTheme } from 'services/theme'
@@ -17,7 +17,8 @@ export type GalleryImageProps = ExtendableStyles &
 
 export function GalleryImage({ className, data, onClick, ...otherProps }: GalleryImageProps) {
   const { title: alt } = data
-  const { url, width, height } = getGiphyLivePreview(data)
+  const { width, height } = getGiphyProportions(data)
+  const src = getGiphyLivePreviewUrl(data)
   const classes = useStyles()
   const backgroundColor = getRandomBackgroundColor()
   const containerRef = useSizeComputation({ width, height })
@@ -36,7 +37,7 @@ export function GalleryImage({ className, data, onClick, ...otherProps }: Galler
       <RevealOnHover>
         <GalleryImageInformation className={classes.galleryInformation} data={data} />
       </RevealOnHover>
-      <AsyncImage className={classes.image} src={url} alt={alt} spinnerColor="white" />
+      <AsyncImage className={classes.image} src={src} alt={alt} spinnerColor="white" />
     </div>
   )
 }

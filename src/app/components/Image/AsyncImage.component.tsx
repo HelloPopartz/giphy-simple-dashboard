@@ -7,7 +7,8 @@ import clsx from 'clsx'
 
 import { Spinner } from '../Loading'
 
-export type AsyncImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
+export type AsyncImageProps = Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'src'> & {
+  src: string | string[]
   spinnerColor?: string
 }
 
