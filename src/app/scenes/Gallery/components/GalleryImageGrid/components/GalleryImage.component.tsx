@@ -5,8 +5,6 @@ import { ExtendableStyles, Testable } from 'utils/react'
 import { makeStyles, AppTheme } from 'services/theme'
 import clsx from 'clsx'
 
-import { RevealOnHover } from 'app/components'
-
 import { GalleryImageInformation } from './GalleryImageInformation.component'
 
 export type GalleryImageProps = ExtendableStyles &
@@ -34,9 +32,7 @@ export function GalleryImage({ className, data, onClick, ...otherProps }: Galler
       onClick={handleClick}
       {...otherProps}
     >
-      <RevealOnHover>
-        <GalleryImageInformation className={classes.galleryInformation} data={data} />
-      </RevealOnHover>
+      <GalleryImageInformation className={classes.galleryInformation} data={data} />
       <AsyncImage className={classes.image} src={src} alt={alt} spinnerColor="white" />
     </div>
   )
@@ -81,6 +77,11 @@ const useStyles = makeStyles(({ spacing }: AppTheme) => ({
     top: 0,
     left: 0,
     cursor: 'pointer',
+    opacity: 0,
+    transition: 'opacity 0.3s cubic-bezier(0.33, 1, 0.68, 1)',
+    ['&:hover']: {
+      opacity: 1,
+    },
   },
   galleryImage: {
     position: 'relative',
