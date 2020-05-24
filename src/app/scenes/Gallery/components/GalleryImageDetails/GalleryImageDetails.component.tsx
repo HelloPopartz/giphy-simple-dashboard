@@ -13,15 +13,25 @@ export type GalleryImageDetailsProps = ExtendableStyles &
     onClose: () => void
   }
 
-export function GalleryImageDetails({ className, onClose, data, ...otherProps }: GalleryImageDetailsProps) {
+export function GalleryImageDetails({
+  className,
+  onClose,
+  data,
+  'data-testid': dataTestid,
+  ...otherProps
+}: GalleryImageDetailsProps) {
   const classes = useStyles()
   return (
-    <div className={clsx(className, classes.galleryImageDetails)} {...otherProps}>
+    <div className={clsx(className, classes.galleryImageDetails)} data-testid={dataTestid} {...otherProps}>
       <div className={classes.galleryImageDetailsContent}>
         <GalleryImageDetailsPreview className={classes.galleryImageDetailsPreview} data={data} />
         <GalleryImageDetailsInformation data={data} />
       </div>
-      <GalleryImageDetailsActions className={classes.galleryImageDetailsActions} onClose={onClose} />
+      <GalleryImageDetailsActions
+        className={classes.galleryImageDetailsActions}
+        onClose={onClose}
+        data-testid={`${dataTestid}-actions`}
+      />
     </div>
   )
 }

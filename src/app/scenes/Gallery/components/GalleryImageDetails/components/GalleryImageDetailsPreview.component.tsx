@@ -20,6 +20,7 @@ export function GalleryImageDetailsPreview({ className, data, ...otherProps }: G
       alt={alt}
       spinnerColor="white"
       style={{ backgroundColor }}
+      role="img"
       {...otherProps}
     />
   )

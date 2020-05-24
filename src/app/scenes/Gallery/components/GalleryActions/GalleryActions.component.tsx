@@ -20,6 +20,7 @@ export function GalleryActions({
   totalCount,
   onPageChange,
   loading,
+  'data-testid': dataTestId,
   ...otherProps
 }: GalleryActionsProps) {
   const classes = useStyles()
@@ -29,8 +30,13 @@ export function GalleryActions({
 
   const pageCount = totalCount / limit - 1
   return (
-    <div className={clsx(className, classes.actionContainer, loading && classes.loadingContainer)} {...otherProps}>
+    <div
+      className={clsx(className, classes.actionContainer, loading && classes.loadingContainer)}
+      data-testid={dataTestId}
+      {...otherProps}
+    >
       <Pagination
+        data-testid={`${dataTestId}-pagination`}
         forcePage={currentPage}
         onPageChange={onPageChange}
         pageCount={pageCount}

@@ -11,11 +11,16 @@ export type GalleryImageDetailsActionsProps = ExtendableStyles &
     onClose: () => void
   }
 
-export function GalleryImageDetailsActions({ className, onClose, ...otherProps }: GalleryImageDetailsActionsProps) {
+export function GalleryImageDetailsActions({
+  className,
+  onClose,
+  'data-testid': dataTestid,
+  ...otherProps
+}: GalleryImageDetailsActionsProps) {
   const classes = useStyles()
   return (
-    <div className={clsx(className, classes.actionContainer)} {...otherProps}>
-      <UnStyledButton className={classes.backButton} onClick={onClose}>
+    <div className={clsx(className, classes.actionContainer)} data-testid={dataTestid} {...otherProps}>
+      <UnStyledButton className={classes.backButton} onClick={onClose} data-testid={`${dataTestid}-back`}>
         <ArrowBackIcon className={classes.backButtonIcon} /> <span className={classes.backButtonLabel}>Back</span>
       </UnStyledButton>
     </div>

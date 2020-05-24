@@ -19,6 +19,7 @@ export function Gallery() {
         {detailImageData && (
           <SlideIn className={classes.galleryDetails}>
             <GalleryImageDetails
+              data-testid={'gallery-image-details'}
               className={classes.galleryDetailsContent}
               data={detailImageData}
               onClose={closeGalleryDetails}
@@ -27,14 +28,16 @@ export function Gallery() {
         )}
       </AnimatePresence>
 
-      <GalleryTitle className={classes.titleContainer} />
+      <GalleryTitle className={classes.titleContainer} data-testid={'gallery-image-title'} />
       <GalleryImageGrid
+        data-testid={'gallery-image-grid'}
         className={classes.imageGrid}
         loading={isLoading}
         data={galleryData}
         onClickImage={openGalleryDetails}
       />
       <GalleryActions
+        data-testid={'gallery-image-actions'}
         currentPage={currentPage}
         limit={limit}
         totalCount={totalCount}
