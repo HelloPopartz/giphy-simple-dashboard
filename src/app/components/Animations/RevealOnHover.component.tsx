@@ -1,6 +1,6 @@
 import React from 'react'
 import { ExtendableStyles, Testable, WithChildren } from 'utils/react'
-import { motion } from 'framer-motion'
+import { motion } from 'services/animations'
 
 export type RevealOnHoverProps = ExtendableStyles & Testable & WithChildren
 
