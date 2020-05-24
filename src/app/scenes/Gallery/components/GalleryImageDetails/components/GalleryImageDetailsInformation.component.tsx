@@ -49,17 +49,26 @@ function removeUserFromTitle(title: string) {
   return title.replace(regex, '')
 }
 
-const useStyles = makeStyles(({ spacing, typography }: AppTheme) => ({
+const useStyles = makeStyles(({ spacing, typography, breakpoints }: AppTheme) => ({
   informationContainer: {
     display: 'flex',
     flexDirection: 'column',
     padding: spacing(3),
+    [breakpoints.down(breakpoints.values.md)]: {
+      textAlign: 'center',
+    },
   },
   title: {
     marginBottom: spacing(0.5),
+    [breakpoints.down(breakpoints.values.md)]: {
+      margin: 0,
+    },
   },
   extraInformation: {
     marginTop: spacing(10),
+    [breakpoints.down(breakpoints.values.md)]: {
+      marginTop: spacing(3),
+    },
   },
   extraInformationLabel: {
     fontSize: typography.sizes.L,

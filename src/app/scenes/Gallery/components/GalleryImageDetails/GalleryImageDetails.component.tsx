@@ -36,7 +36,7 @@ export function GalleryImageDetails({
   )
 }
 
-const useStyles = makeStyles(({ spacing }: AppTheme) => ({
+const useStyles = makeStyles(({ spacing, breakpoints }: AppTheme) => ({
   galleryImageDetails: {
     position: 'relative',
     display: 'flex',
@@ -47,12 +47,21 @@ const useStyles = makeStyles(({ spacing }: AppTheme) => ({
     alignItems: 'center',
     padding: spacing(3),
     paddingRight: spacing(15),
+    [breakpoints.down(breakpoints.values.md)]: {
+      padding: spacing(5),
+      flexDirection: 'column',
+    },
   },
   galleryImageDetailsPreview: {
     maxHeight: '100%',
     minWidth: '66%',
     objectFit: 'contain',
     borderRadius: spacing(),
+    [breakpoints.down(breakpoints.values.md)]: {
+      minWidth: 'auto',
+      maxHeight: '50%',
+      height: '100%',
+    },
   },
   galleryImageDetailsActions: {
     position: 'absolute',
