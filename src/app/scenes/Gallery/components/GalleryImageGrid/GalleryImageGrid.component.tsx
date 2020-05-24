@@ -18,13 +18,26 @@ export type GalleryImageGridProps = ExtendableStyles &
     onClickImage: (data: GiphyData) => void
   }
 
+// TODO: Should use theme
+const breakpointColumnsObj = {
+  default: 4,
+  960: 3,
+  600: 2,
+  300: 1,
+}
+
 export function GalleryImageGrid({ loading, data, onClickImage, ...otherProps }: GalleryImageGridProps) {
   const classes = useStyles()
+
   return (
     <AnimateSharedLayout>
       <motion.div animate {...otherProps}>
         <AsyncContainer alwaysShowContent loading={loading}>
-          <Masonry breakpointCols={4} className={classes.gridContainer} columnClassName={classes.gridColumn}>
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className={classes.gridContainer}
+            columnClassName={classes.gridColumn}
+          >
             {data.map((image, index) => {
               return (
                 <motion.div animate key={`image-${index}`}>
