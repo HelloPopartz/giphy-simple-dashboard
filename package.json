@@ -16,6 +16,7 @@
     "lodash": "^4.17.15",
     "mdi-react": "^7.2.0",
     "postcss-normalize": "^9.0.0",
+    "proxy-polyfill": "^0.3.1",
     "query-string": "^6.12.1",
     "react": "^16.13.1",
     "react-div-100vh": "^0.3.8",
