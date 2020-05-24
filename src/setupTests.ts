@@ -3,3 +3,15 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom/extend-expect'
+import MutationObserver from '@sheerun/mutationobserver-shim'
+import { mockAsyncImage } from 'app/components/Image/__mocks__'
+
+window.MutationObserver = MutationObserver
+
+beforeEach(() => {
+  mockAsyncImage()
+})
+
+afterEach(() => {
+  jest.restoreAllMocks()
+})
