@@ -14,7 +14,8 @@ You can find a example in `.env.local.example` as well as down bellow
 
 - [ ] More E2E tests (Pagination)
 - [ ] More unit test
-- [ ] Fixe resize behavior
+- [ ] Fix resize behavior
+- [ ] Add gestures for pages
 - [ ] Test in iOS devices
 
 ## Available Scripts
