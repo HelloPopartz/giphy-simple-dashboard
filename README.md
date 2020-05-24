@@ -2,7 +2,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Setup
 
-You need to setup a `.env.local` file to provide your GIPHY API key. You can find a example in `.env.local.example` as well as down bellow
+You need to setup a `.env.local` file to provide your **GIPHY API** key. 
+
+You can find a example in `.env.local.example` as well as down bellow
+
+    REACT_APP_GIPHY_TOKEN='some_cool_api_key'
+    REACT_APP_GIPHY_ENDPOINT='https://api.giphy.com/'
+    REACT_APP_GIPHY_PROXY_ENDPOINT = '/giphy'
+
+## TODO
+
+ - [ ] More E2E tests (Pagination)
+ - [ ] More unit test
+ - [ ] Test in iOS devices
 
 ## Available Scripts
 
@@ -20,6 +32,16 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `yarn test:e2e`
+
+Launches the test runner **Cypress** in headless mode.<br />
+**App needs to be started in order to cypress to work**
+
+### `yarn test:e2e:dashboard`
+
+Launches **Cypress**.<br />
+**App needs to be started in order to cypress to work**
 
 ### `yarn build`
 
