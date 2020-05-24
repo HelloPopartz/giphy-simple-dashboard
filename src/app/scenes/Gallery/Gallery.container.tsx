@@ -9,6 +9,8 @@ import { GiphyData } from 'app/entities/giphy'
 
 import { useDismountEffect } from 'utils/react'
 
+import { RootState } from 'services/redux/redux.types'
+
 import {
   fetchImagesForGallery,
   unMountGallery,
@@ -34,13 +36,20 @@ export function useGalleryData() {
   const isLoading = useSelector(isGalleryLoading)
   const galleryData = useSelector(getGalleryImages)
   const totalCount = useSelector(getGalleryApiTotalCount)
+  const detailImageData = useSelector((state: RootState) => {
+    if (!showDetails) {
+      return undefined
+    }
+    const galleryData = getGalleryImages(state)
+    return galleryData.find(image => image.id === showDetails)
+  })
   return {
     isLoading,
     galleryData,
     totalCount,
     limit,
     currentPage: currentPage ? Number(currentPage) : 0,
-    detailImageData: null,
+    detailImageData,
   }
 }
 
