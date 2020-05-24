@@ -47,5 +47,5 @@ export function render<State = RootState>(
 }
 
 //Re-exports
-export { cleanup, fireEvent, act } from '@testing-library/react'
+export { cleanup, fireEvent, act, getByText } from '@testing-library/react'
 export { userEvent, wait }
