@@ -16,7 +16,7 @@ export function GalleryImageInformation({ className, data, ...otherProps }: Gall
   const { title } = data
   return (
     <div className={clsx(className, classes.imageInformation)} {...otherProps}>
-      <Body>{title}</Body>
+      <Body className={classes.imageInformationText}>{title}</Body>
     </div>
   )
 }
