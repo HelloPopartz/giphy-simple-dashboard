@@ -1,0 +1,3 @@
+export const GIPHY_API_KEY = process.env.REACT_APP_GIPHY_TOKEN
+export const GIPHY_MAIN_ENDPOINT = process.env.REACT_APP_GIPHY_ENDPOINT
+export const GIPHY_PROXY_ENDPOINT = process.env.REACT_APP_GIPHY_PROXY_ENDPOINT
