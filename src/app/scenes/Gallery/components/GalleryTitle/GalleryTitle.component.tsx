@@ -8,7 +8,7 @@ export type GalleryTitleProps = ExtendableStyles
 export function GalleryTitle(props: GalleryTitleProps) {
   return (
     <header {...props}>
-      <Title>Domestika test gallery</Title>
+      <Title>Giphy test gallery</Title>
       <Subtitle>With React, Redux, Sagas and many other things</Subtitle>
     </header>
   )
