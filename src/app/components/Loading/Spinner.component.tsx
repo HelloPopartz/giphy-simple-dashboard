@@ -15,8 +15,12 @@ export type SpinnerProps = ExtendableStyles &
     color4?: string
   }
 
-export function Spinner({ size: sizeProp, ...otherProps }: SpinnerProps) {
+export function Spinner({
+  size: sizeProp,
+  'data-testid': dataTestid = 'loading-spinner',
+  ...otherProps
+}: SpinnerProps) {
   const { spacingUnit }: AppTheme = useTheme()
   const size = sizeProp || spacingUnit * 5
-  return <InternalSpinner size={size} {...otherProps} />
+  return <InternalSpinner data-testid={dataTestid} size={size} {...otherProps} />
 }
