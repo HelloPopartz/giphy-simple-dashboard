@@ -1,18 +1,18 @@
-import clsx from 'clsx'
 import React from 'react'
 import ReactPaginate, { ReactPaginateProps } from 'react-paginate'
 
 import ChevronLeftIcon from 'mdi-react/ChevronLeftIcon'
 import ChevronRightIcon from 'mdi-react/ChevronRightIcon'
 import { makeStyles, AppTheme } from 'services/theme'
-import { ExtendableStyles } from 'utils/react'
+import { ExtendableStyles, Testable } from 'utils/react'
 
 import { IconButton } from '../Buttons'
 
 export type PaginationProps = ExtendableStyles &
+  Testable &
   Pick<ReactPaginateProps, 'pageCount' | 'pageRangeDisplayed' | 'marginPagesDisplayed' | 'forcePage' | 'onPageChange'>
 
-export function Pagination({ className, ...otherProps }: PaginationProps) {
+export function Pagination({ className, style, 'data-testid': dataTestid, ...otherProps }: PaginationProps) {
   const classes = useStyles()
   const previousLabel = (
     <IconButton>
@@ -25,17 +25,19 @@ export function Pagination({ className, ...otherProps }: PaginationProps) {
     </IconButton>
   )
   return (
-    <ReactPaginate
-      containerClassName={clsx(className, classes.paginationContainer)}
-      previousLabel={previousLabel}
-      nextLabel={nextLabel}
-      pageLinkClassName={classes.pageClassName}
-      disabledClassName={classes.disabledClassName}
-      breakClassName={classes.pageClassName}
-      activeClassName={classes.activePage}
-      disableInitialCallback
-      {...otherProps}
-    />
+    <div className={className} style={style} data-testid={dataTestid}>
+      <ReactPaginate
+        containerClassName={classes.paginationContainer}
+        previousLabel={previousLabel}
+        nextLabel={nextLabel}
+        pageLinkClassName={classes.pageClassName}
+        disabledClassName={classes.disabledClassName}
+        breakClassName={classes.pageClassName}
+        activeClassName={classes.activePage}
+        disableInitialCallback
+        {...otherProps}
+      />
+    </div>
   )
 }
 
