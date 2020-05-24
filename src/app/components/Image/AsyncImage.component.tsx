@@ -18,16 +18,16 @@ function AsyncImageInternal({ src, srcSet, alt = '', ...otherProps }: AsyncImage
   return <img src={processedSrc} alt={alt} {...otherProps} />
 }
 
-export function AsyncImage({ className, spinnerColor, ...otherProps }: AsyncImageProps) {
+export function AsyncImage({ className, spinnerColor, style, ...otherProps }: AsyncImageProps) {
   const classes = useStyles()
   const spinnerComponent = (
-    <div className={clsx(className, classes.spinnerContainer)}>
+    <div className={clsx(className, classes.spinnerContainer)} style={style}>
       <Spinner size={30} singleColor={spinnerColor} />
     </div>
   )
   return (
     <Suspense fallback={spinnerComponent}>
-      <AsyncImageInternal className={className} {...otherProps} />
+      <AsyncImageInternal className={className} style={style} {...otherProps} />
     </Suspense>
   )
 }

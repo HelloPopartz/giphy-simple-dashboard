@@ -20,7 +20,7 @@ export function GalleryImageDetailsInformation({
   const { title, username, rating, bitly_url, slug } = data
   return (
     <div className={clsx(className, classes.informationContainer)} {...otherProps}>
-      <Title className={classes.title}>{title}</Title>
+      <Title className={classes.title}>{removeUserFromTitle(title)}</Title>
       <Subtitle>
         By <strong>{username}</strong>
       </Subtitle>
@@ -42,6 +42,11 @@ export function GalleryImageDetailsInformation({
       </div>
     </div>
   )
+}
+
+function removeUserFromTitle(title: string) {
+  const regex = new RegExp(/by\s+\w+/)
+  return title.replace(regex, '')
 }
 
 const useStyles = makeStyles(({ spacing, typography }: AppTheme) => ({

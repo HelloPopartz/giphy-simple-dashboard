@@ -41,6 +41,8 @@ const useStyles = makeStyles(({ spacing }: AppTheme) => ({
   galleryImageDetailsPreview: {
     maxHeight: '100%',
     minWidth: '66%',
+    objectFit: 'contain',
+    borderRadius: spacing(),
   },
   galleryImageDetailsActions: {
     position: 'absolute',

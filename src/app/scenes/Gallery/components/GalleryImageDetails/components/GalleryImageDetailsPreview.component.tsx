@@ -12,5 +12,21 @@ export type GalleryImageDetailsPreviewProps = ExtendableStyles &
 export function GalleryImageDetailsPreview({ className, data, ...otherProps }: GalleryImageDetailsPreviewProps) {
   const { title: alt } = data
   const { webp } = getGiphyPreview(data)
-  return <AsyncImage className={className} src={webp} alt={alt} spinnerColor="white" {...otherProps} />
+  const backgroundColor = getRandomBackgroundColor()
+  return (
+    <AsyncImage
+      className={className}
+      src={webp}
+      alt={alt}
+      spinnerColor="white"
+      style={{ backgroundColor }}
+      {...otherProps}
+    />
+  )
+}
+
+function getRandomBackgroundColor() {
+  const colors = ['#DC143C', '#66CDAA', '#FFD700']
+  const index = Math.floor(Math.random() * colors.length)
+  return colors[index]
 }
