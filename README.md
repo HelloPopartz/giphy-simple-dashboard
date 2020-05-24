@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Setup
 
-You need to setup a `.env.local` file to provide your **GIPHY API** key. 
+You need to setup a `.env.local` file to provide your **GIPHY API** key.
 
 You can find a example in `.env.local.example` as well as down bellow
 
@@ -12,9 +12,10 @@ You can find a example in `.env.local.example` as well as down bellow
 
 ## TODO
 
- - [ ] More E2E tests (Pagination)
- - [ ] More unit test
- - [ ] Test in iOS devices
+- [ ] More E2E tests (Pagination)
+- [ ] More unit test
+- [ ] Fixes resize behavior
+- [ ] Test in iOS devices
 
 ## Available Scripts
 
