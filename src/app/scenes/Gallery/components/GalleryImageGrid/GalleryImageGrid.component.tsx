@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion, AnimateSharedLayout } from 'framer-motion'
+import { motion, AnimateSharedLayout } from 'services/animations'
 
 import Masonry from 'react-masonry-css'
 
