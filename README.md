@@ -17,6 +17,7 @@ You can find a example in `.env.local.example` as well as down bellow
 - [ ] Fix resize behavior
 - [ ] Add gestures for pages
 - [ ] Test in iOS devices
+- [ ] Support for IE11 (Possible? GIPHY doesn't support it)
 
 ## Available Scripts
 
